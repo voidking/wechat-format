@@ -9,17 +9,24 @@ var defaultTheme = {
   },
   // block element
   block: {
+    h1: {
+      'font-size': '150%',
+      'text-align': 'left',
+      'font-weight': 'bold',
+      'margin': '10px 10px 10px 10px',
+      'border-bottom': '1px solid #eee'
+    },
     h2: {
-      'font-size': '140%',
-      'text-align': 'center',
-      'font-weight': 'normal',
-      'text-align': 'center',
-      'margin': '80px 10px 40px 10px'
+      'font-size': '130%',
+      'text-align': 'left',
+      'font-weight': 'bold',
+      'margin': '10px 10px 10px 10px',
+      'border-bottom': '1px solid #eee'
     },
     h3: {
-      'font-weight': 'bold',
       'font-size': '120%',
-      'margin': '40px 10px 20px 10px'
+      'font-weight': 'bold',
+      'margin': '10px 10px 10px 10px'
     },
     p: {
       'margin': '10px 10px',

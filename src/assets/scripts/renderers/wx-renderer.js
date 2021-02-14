@@ -63,7 +63,7 @@ var WxRenderer = function (opts) {
       }
       return '<code style="font-size: 90%; opacity: 0.6;">[' + x[0] + ']</code> ' + x[1] + ': <i>'  + x[2] +'</i><br/>'
     })
-    return '<h3 ' + S('h3') + '>References</h3><p ' + S('footnotes') + '>'  + footnoteArray.join('\n') + '</p>'
+    return '<h1 ' + S('h1') + '>References</h1><p ' + S('footnotes') + '>'  + footnoteArray.join('\n') + '</p>'
   }
 
   this.setOptions = function (newOpts) {
@@ -83,10 +83,23 @@ var WxRenderer = function (opts) {
     FuriganaMD.register(renderer);
   
     renderer.heading = function (text, level) {
-      if (level < 3) {
+      // if (level < 3) {
+      //   return '<h2 ' + S('h2') + '>' + text + '</h2>'
+      // } else {
+      //   return '<h3 ' + S('h3') + '>' + text + '</h3>'
+      // }
+      if (level == 1) {
+        return '<h1 ' + S('h1') + '>' + text + '</h1>'
+      } else if (level === 2) {
         return '<h2 ' + S('h2') + '>' + text + '</h2>'
-      } else {
+      } else if (level == 3) {
         return '<h3 ' + S('h3') + '>' + text + '</h3>'
+      } else if (level == 4) {
+        return '<h4 ' + S('h4') + '>' + text + '</h4>'
+      } else if (level == 5) {
+        return '<h5 ' + S('h5') + '>' + text + '</h5>'
+      } else if (level == 6) {
+        return '<h6 ' + S('h6') + '>' + text + '</h6>'
       }
     }
     renderer.paragraph = function (text) {

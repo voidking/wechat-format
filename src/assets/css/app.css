@@ -2,6 +2,53 @@
 a { text-decoration: none; color: #ff3502 }
 input, button, textarea { font-family: inherit; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+#output { counter-reset: h1counter; }
+#output h1 { counter-reset: h2counter; }
+#output h2 { counter-reset: h3counter; }
+#output h3 { counter-reset: h4counter; }
+#output h4 { counter-reset: h5counter; }
+#output h5 { counter-reset: h6counter; }
+#output h6 { }
+#output h1:before {
+  counter-increment: h1counter;
+  content: counter(h1counter) ".\0000a0\0000a0";
+}
+#output h2:before {
+  counter-increment: h2counter;
+  content: counter(h1counter) "."
+  counter(h2counter) ".\0000a0\0000a0";
+}
+#output h3:before {
+  counter-increment: h3counter;
+  content: counter(h1counter) "."
+  counter(h2counter) "."
+  counter(h3counter) ".\0000a0\0000a0";
+}
+#output h4:before {
+  counter-increment: h4counter;
+  content: counter(h1counter) "."
+  counter(h2counter) "."
+  counter(h3counter) "."
+  counter(h4counter) ".\0000a0\0000a0";
+}
+#output h5:before {
+  counter-increment: h5counter;
+  content: counter(h1counter) "."
+  counter(h2counter) "."
+  counter(h3counter) "."
+  counter(h4counter) "."
+  counter(h5counter) ".\0000a0\0000a0";
+}
+#output h6:before {
+  counter-increment: h6counter;
+  content: counter(h1counter) "."
+  counter(h2counter) "."
+  counter(h3counter) "."
+  counter(h4counter) "."
+  counter(h5counter) "."
+  counter(h6counter) ".\0000a0\0000a0";
+}
+
 em { font-style: normal !important; }
 html, body {
   height: 100%;
